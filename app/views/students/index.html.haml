@@ -1,0 +1,62 @@
+.card.shadow.mb-4
+  .card-header.py-3.d-flex
+    %h2.m-0.pr-4.font-weight-bold.text-primary 生徒一覧
+    %a.btn.btn-primary{:href => "#"}
+      =icon("fas","user-plus")
+  .card-body
+    .table-responsive
+      %table#dataTable.table.table-bordered{cellspacing: "0", width: "100%"}
+        %thead
+          %tr
+            %th ID
+            %th 氏名
+            %th クラス
+            %th 有効
+            %th アクション
+        -# %tfoot
+        -#   %tr
+        -#     %th ID
+        -#     %th 氏名
+        -#     %th クラス
+        -#     %th 有効
+        -#     %th アクション
+        %tbody
+          %tr
+            %td 1
+            %td 山田　太郎
+            %td 中3A
+            %td ○
+            %td.d-flex.border-0.mt-1.col-12
+              =icon("far","file",class: "pr-4 fa-lg")
+              =icon("fas","edit",class: "pr-4 fa-lg")
+              =icon("fas","trash",class: "pr-4 fa-lg")
+          %tr
+            %td 2
+            %td 田中　次郎
+            %td 中3B
+            %td ○
+            %td
+          %tr
+            %td 3
+            %td 佐藤　三郎
+            %td 中2A
+            %td ○
+            %td
+          %tr
+            %td 4
+            %td 鈴木　花子
+            %td 中3A
+            %td -
+            %td
+          %tr
+            %td 5
+            %td 高橋　四郎
+            %td 中1A
+            %td ○
+            %td
+          %tr
+            %td 6
+            %td 山本　一郎
+            %td 中3A
+            %td ○
+            %td
