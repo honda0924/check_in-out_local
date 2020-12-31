@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: check_in-out_local_production
-  username: check_in-out_local
-  password: <%= ENV['CHECK_IN-OUT_LOCAL_DATABASE_PASSWORD'] %>
+  # database: check_in-out_local_production
+  # username: check_in-out_local
+  # password: <%= ENV['CHECK_IN-OUT_LOCAL_DATABASE_PASSWORD'] %>
+  adaptoer: postgresql
+  encoding: unicode
+  pool: 5
