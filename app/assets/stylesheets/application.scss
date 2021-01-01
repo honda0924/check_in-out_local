@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // Import Custom SB Admin 2 Variables (Overrides Default Bootstrap Variables)
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
-
+// @import 'font-awesome-sprockets';
+// @import 'font-awesome';
+@import "reset.css";
 @import "sb-admin-2.scss";
 
 @import "students";
+@import "ios";
 
 
