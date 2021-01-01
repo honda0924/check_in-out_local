@@ -1,3 +1,83 @@
-// Place all the styles related to the ios controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 50px;
+  border-bottom: 2px solid #555454;
+  height: 70px;
+}
+
+#ios_student_name{
+  margin-left: 20px;
+  font-size: 21px;
+}
+.container {
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+​
+.ios_button{
+  width: 100%;
+  height: 150px;
+  font-size: 56px;
+  letter-spacing: 0.2em;
+  border-top: none;
+  border-bottom:none ;
+}
+
+#ios_enter{
+  width: 100%;
+  height: 150px;
+  font-size: 56px;
+  letter-spacing: 0.2em;
+  border-top: none;
+  border-bottom:none ;
+  margin: 60px 0 0 0;
+  border-left: solid 20px #f1322c;
+  border-right: solid 20px #f1322c;
+  color: #f1322c;
+  background:#f5cecc;
+}
+#ios_enter:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#ios_exit {
+  width: 100%;
+  height: 150px;
+  font-size: 56px;
+  letter-spacing: 0.2em;
+  border-top: none;
+  border-bottom:none ;
+  margin: 45px 0 0 0;
+  border-left: solid 20px #3f63c7;
+  border-right: solid 20px #3f63c7;
+  color: #3f63c7;
+  background:#b2dcf0;
+}
+#ios_exit:hover{
+  border-bottom: none;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#ios_cancel{
+  width: 100%;
+  height: 150px;
+  font-size: 56px;
+  margin: 45px 0;
+  text-decoration: none;
+  color: #555454;
+  background: #fff;
+  border: 1px solid #555454;
+  border-radius: 20px;
+}
+#ios_cancel:hover{
+  background: #555454;
+  color:#fff;
+  cursor: pointer;
+  text-decoration: none;
+}

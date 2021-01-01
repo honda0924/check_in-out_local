@@ -1,0 +1,10 @@
+= form_for @io do |f|
+  %header
+    =f.text_field :student_id,id: "ios_student_id"     
+    %span#ios_student_name
+      名前
+  .container
+    = f.submit "  入室する", id: "ios_enter",class: "fas ios_button"
+    = f.submit "退室する  ", id: "ios_exit",class: "fas ios_button"    
+    %button#ios_cancel.fas.ios_button
+      キャンセル
