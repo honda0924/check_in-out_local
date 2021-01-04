@@ -1,3 +1,104 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*===========================
+全体に適用
+===========================*/
+@charset "utf-8";
+body {
+  background-color: #e1e2e1;
+  position: relative;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/*===========================
+コンテナ幅
+===========================*/
+.container {
+  width: 90%;
+  margin: auto;
+}
+/*===========================
+ヘッダー
+===========================*/
+header {
+  padding-top: 20px;
+  border-bottom: 2px solid #555454;
+  height: 70px;
+  background-color:white;
+}
+.header-title {
+  font-size: 36px;
+  color: #2c2c2c;
+  text-align: center;
+}
+.header-btn {
+  position: absolute;
+  top: 10px;
+  right: 10%;
+  width: 180px;
+  height: 50px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #da6c64;
+  border: none;
+  border-bottom:4px solid #9e352e;  
+  outline: none;
+  border-radius: 5px;
+}
+.header-btn:hover {
+  opacity: 0.9;
+  border-bottom: none;
+  cursor: pointer;
+}
+/*===========================
+メイン
+===========================*/
+.first-box {
+  width: 700px;
+  height: 275px;
+  margin:30px auto;
+  background-color: white;
+  box-shadow: 2px 2px 4px gray;
+}
+.second-box {
+  width: 700px;
+  height: 275px;
+  margin:30px auto;
+  background-color: white;
+  box-shadow: 2px 2px 4px gray;
+}
+p {
+  padding: 15px;
+} 
+.link-btn {
+  display: inline-block;
+  margin: 20px 40px 20px 20px;
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #264079;
+  outline: none;
+  color: #ffffff;
+  background-color: #5083ce;
+  border-radius: 5px;
+}
+.link-btn:hover {
+  opacity: 0.9;
+  border-bottom: none;
+  cursor: pointer;
+}
+.hide-btn {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  background-color: #7b7c7e;
+  border-bottom: 2px solid #3a3a3a;
+  border-radius: 5px;
+}
+.hide-btn:hover {
+  opacity: 0.9;
+  border-bottom: none;
+  cursor: pointer;
+}
