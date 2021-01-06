@@ -27,6 +27,7 @@ header {
   font-size: 36px;
   color: #2c2c2c;
   text-align: center;
+  margin:0 auto;
 }
 .header-btn {
   position: absolute;
@@ -52,21 +53,24 @@ header {
 ===========================*/
 .first-box {
   width: 700px;
-  height: 275px;
+  // height: 275px;
   margin:30px auto;
   background-color: white;
   box-shadow: 2px 2px 4px gray;
 }
 .second-box {
   width: 700px;
-  height: 275px;
+  // height: 275px;
   margin:30px auto;
   background-color: white;
   box-shadow: 2px 2px 4px gray;
 }
-p {
-  padding: 15px;
+.message-info {
+  padding:0 15px;
 } 
+.message-date{
+  padding-top: 15px;
+}
 .link-btn {
   display: inline-block;
   margin: 20px 40px 20px 20px;
