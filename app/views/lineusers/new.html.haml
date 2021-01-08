@@ -1,0 +1,22 @@
+%header
+  %h1.header-title LINE ID紐付け
+%section.main
+  .container
+    .box
+      %form{:action => "", :method => ""}
+        %span.lineid LINE ID
+        %input{:name => "ID", :style => "width: 450px; height: 30px;", :type => "text"}/
+      %form{:action => "", :method => ""}
+        %span.parentsname 保護者氏名
+        %input{:name => "name", :style => "width: 300px; height: 30px;", :type => "text"}/
+      %form{:action => "", :method => ""}
+        %span.studentsname 生徒氏名
+        %select{:id => "", :name => "studentsname", :style => "width: 150px; height: 30px;"}
+          %option{:value => "山田　のぞみ"} 山田　のぞみ
+          %option{:value => "田中　太郎"} 田中　太郎
+          %option{:value => "酒井　麻由子"} 酒井　麻由子
+          %option{:value => "上野　ゆうき"} 上野　ゆうき
+          %option{:value => "小嶋　たかし"} 小嶋　たかし
+      %form.register-form{:action => "", :method => ""}
+        %input.register-btn{:type => "button", :value => "登録する"}/
+      %button.cansel-btn キャンセル

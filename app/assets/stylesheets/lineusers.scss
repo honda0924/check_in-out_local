@@ -1,3 +1,100 @@
 // Place all the styles related to the lineusers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*===========================
+全体に適用
+===========================*/
+@charset "utf-8";
+body {
+  background-color: #e1e2e1;
+  position: relative;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/*===========================
+コンテナ幅
+===========================*/
+.container {
+  width: 90%;
+  margin: auto;
+}
+/*===========================
+ヘッダー
+===========================*/
+header {
+  padding-top: 20px;
+  border-bottom: 2px solid #555454;
+  height: 70px;
+  background-color:white;
+}
+.header-title {
+  font-size: 36px;
+  color: #2c2c2c;
+  text-align: center;
+}
+/*===========================
+メイン
+===========================*/
+.box {
+  width: 700px;
+  height: 350px;
+  padding: 40px 20px 20px 20px;
+  margin:140px auto;
+  background-color: white;
+  box-shadow: 2px 2px 4px gray;
+}
+form {
+  margin: 20px;
+}
+.lineid,.parentsname,.studentsname {
+  font-size: 24px;
+}
+.lineid {
+  margin:0 30px 30px 0;
+}
+.parentsname {
+  margin:20px 5px 20px 0;
+}
+.studentsname {
+  margin: 20px 29px 20px 0;
+}
+.register-form {
+  width: 180px;
+  display: inline-block;
+}
+.register-btn {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #264079;
+  outline: none;
+  color: #ffffff;
+  background-color: #5083ce;
+  border-radius: 5px;
+}
+.register-btn:hover {
+  opacity: 0.9;
+  border-bottom: none;
+  cursor: pointer;
+}
+.cansel-btn {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  margin-left: 80px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+	color: #555454;
+	background: #fff;
+  border: 1px solid #555454;
+  border-radius: 5px;
+}
+.cansel-btn:hover {
+  background: #555454;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
