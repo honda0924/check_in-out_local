@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>生徒一覧</title>
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+</head>
+<body id="page-top">
+        <!-- Begin Page Content -->
+                <div class="container-fluid p-0" style="width:100%;">
+                    <div class="row">
+                        <div class="col-md-2" style="background-color: #282D65;">
+                            <nav class="nav flex-column py-4">
+                                <a class="nav-link active pb-5" style="font-size: 20px; color: #F8FAF9;" href="#">サイト内メニュー</a>
+                                <a class="navigation nav-link py-3" href="#" style="color: #F8FAF9;"><i class="fas fa-caret-right fa-fw"></i> 生徒一覧</a>
+                                <a class="nav-link py-3" href="#" style="color: #F8FAF9;"><i class="fas fa-caret-right fa-fw"></i> LINEメッセージ</a>
+                                <a class="nav-link disabled py-3" href="#" style="color: #F8FAF9;"><i class="fas fa-caret-right fa-fw"></i> 登録画面</a>
+                              </nav>
+                        </div>
+                        <div class="col-md-10 p-0">
+                            <header style="height: 70px;  border-bottom: 2px solid #7DB0C9;">
+                                <h1 class="text-center py-3" style="font-size: 36px; color:#282D65;">生徒一覧</h1>
+                            </header>
+                        <div class="main" style="background-color: #757F95; height: 100vh;">
+                            <div class="table-responsive m-auto" style="width: 72%; ">
+                                <table class="table table-bordered table-striped mt-5 text-center" id="dataTable" cellspacing="0" style="background-color: white;  box-shadow: 2px 2px 4px gray; vertical-align:middle;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 16%; color: #282D65;">ID</th>
+                                        <th style="width: 44%; color: #282D65;">氏名</th>
+                                        <th style="width: 16%; color: #282D65;">クラス</th>
+                                        <th style="width: 8%; color: #282D65;">有効</th>
+                                        <th style="width: 16%; color: #282D65;">アクション</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="color: #282D65; vertical-align: middle;">123456</td>
+                                            <td style="color: #282D65; vertical-align: middle; text-align: left;">山田　のぞみ</td>
+                                            <td style="color: #282D65; vertical-align: middle;">中1A</td>
+                                            <td style="color: #282D65; vertical-align: middle;">○</td>
+                                            <td>
+                                                <a href="#"><i class="far fa-file fa-fw" style="color: #282D65;"></i></a>
+                                                <a href="#"><i class="fas fa-edit fa-fw" style="color: #282D65;"></i></a>
+                                                <a class="btn p-0" data-toggle="modal" data-target="#testModal"
+                                                href="#"><i class="fas fa-trash fa-fw" style="color: #282D65;"></i></a>
+                                            </td>
+                                                <!-- ボタン・リンククリック後に表示される画面の内容 -->
+                                                            <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h4 style="color: #282D65;">削除確認画面</h4>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <label style="color: #282D65;">本当に削除しても宜しいですか？</label>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
+                                                                            <button type="button" class="btn btn-danger">削除</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                        </tr>
+                                        <tr>
+                                            <td style="color: #282D65; vertical-align: middle;">234567</td>
+                                            <td style="color: #282D65; vertical-align: middle; text-align: left;">田中　太郎</td>
+                                            <td style="color: #282D65; vertical-align: middle;">中2B</td>
+                                            <td style="color: #282D65; vertical-align: middle;">○</td>
+                                            <td>
+                                                <a href="#"><i class="far fa-file fa-fw" style="color: #282D65;"></i></a>
+                                                <a href="#"><i class="fas fa-edit fa-fw" style="color: #282D65;"></i></a>
+                                                <a class="btn p-0" data-toggle="modal" data-target="#testModal"
+                                                href="#"><i class="fas fa-trash fa-fw" style="color: #282D65;"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color: #282D65; vertical-align: middle;">345678</td>
+                                            <td style="color: #282D65; vertical-align: middle; text-align: left;">酒井　真由子</td>
+                                            <td style="color: #282D65; vertical-align: middle;">高3A</td>
+                                            <td style="color: #282D65; vertical-align: middle;">✖️</td>
+                                            <td>
+                                                <a href="#"><i class="far fa-file fa-fw" style="color: #282D65;"></i></a>
+                                                 <a href="#"><i class="fas fa-edit fa-fw" style="color: #282D65;"></i></a>
+                                                <a class="btn p-0" data-toggle="modal" data-target="#testModal"
+                                                href="#"><i class="fas fa-trash fa-fw" style="color: #282D65;"></i></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        </table>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
