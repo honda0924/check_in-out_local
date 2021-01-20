@@ -1,96 +1,83 @@
-.ios_wrapper{
-  background-color: #fff;
-}
-
-.ios-header {
+/*===========================
+全体に適用
+===========================*/
+@charset "utf-8";
+/*===========================
+ヘッダー
+===========================*/
+header {
   height: 100px;
 }
-
-.header-items{
+.header-items {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
-
-#ios_student_name{
+#name {
   font-size: 36px;
 }
-#ios_time{
+#time {
   font-size: 24px;
 }
+/*===========================
+コンテナ幅
+===========================*/
 .container {
   width: 90%;
   height: 100vh;
   margin: auto;
 }
-​
-.ios_button{
+/*===========================
+ボタン
+===========================*/
+#enter {
   width: 100%;
   height: 150px;
   font-size: 56px;
   letter-spacing: 0.2em;
+  margin:40px 0 0 0;
   border-top: none;
   border-bottom:none ;
-}
-
-#ios_enter{
-  width: 100%;
-  height: 150px;
-  font-size: 56px;
-  letter-spacing: 0.2em;
-  border-top: none;
-  border-bottom:none ;
-  margin: 40px 0 0 0;
-  border-left: solid 20px #f1322c;
-  border-right: solid 20px #f1322c;
-  color: #f1322c;
+  border-left: solid 20px #F1322C;
+  border-right: solid 20px #F1322C;
+  color: #F1322C;
   background:#f5cecc;
 }
-#ios_enter:hover{
+#enter:hover {
   opacity: 0.8;
   cursor: pointer;
 }
-
-#ios_exit {
+#exit {
   width: 100%;
   height: 150px;
   font-size: 56px;
   letter-spacing: 0.2em;
+  margin:45px 0 0 0;
   border-top: none;
   border-bottom:none ;
-  margin: 45px 0 0 0;
   border-left: solid 20px #3f63c7;
   border-right: solid 20px #3f63c7;
   color: #3f63c7;
   background:#b2dcf0;
 }
-#ios_exit:hover{
+#exit:hover {
   border-bottom: none;
   opacity: 0.8;
   cursor: pointer;
 }
-
-#ios_cancel{
+#cansel {
   width: 100%;
   height: 150px;
   font-size: 56px;
-  letter-spacing: 0.2em;
-  border-top: none;
-  border-bottom:none ;
   margin: 45px 0 45px 0;
   text-decoration: none;
-  color: #555454;
-  background: #fff;
+	color: #555454;
+	background: #fff;
   border: 1px solid #555454;
   border-radius: 20px;
 }
-#ios_cancel:hover{
+#cansel:hover {
   background: #555454;
-  color:#fff;
+  color: #fff;
   cursor: pointer;
   text-decoration: none;
-}
-#ios_student_id{
-  width: 160px;
-  height:30px;
-  margin-top: 40px;
 }

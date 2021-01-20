@@ -1,33 +1,13 @@
-/*===========================
-全体に適用
-===========================*/
-@charset "utf-8";
-body {
-  background-color: #e1e2e1;
-  position: relative;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-/*===========================
-コンテナ幅
-===========================*/
-.container {
-  width: 90%;
-  margin: auto;
-}
-/*===========================
-ヘッダー
-===========================*/
 header {
   padding-top: 20px;
-  border-bottom: 2px solid #555454;
+  border-bottom: 2px solid #7DB0C9;
   height: 70px;
   background-color:white;
 }
 .header-title {
   font-size: 36px;
-  color: #2c2c2c;
+  color: #282D65;
   text-align: center;
-  margin:0 auto;
 }
 .header-btn {
   position: absolute;
@@ -36,10 +16,10 @@ header {
   width: 180px;
   height: 50px;
   font-size: 18px;
-  color: #ffffff;
-  background-color: #da6c64;
+  color: #FFFFFF;
+  background-color: #EA4335;
   border: none;
-  border-bottom:4px solid #9e352e;  
+  border-bottom:4px solid #9E352E;
   outline: none;
   border-radius: 5px;
 }
@@ -48,28 +28,23 @@ header {
   border-bottom: none;
   cursor: pointer;
 }
-/*===========================
-メイン
-===========================*/
+
 .first-box {
   width: 700px;
-  // height: 275px;
+  height: 275px;
   margin:30px auto;
   background-color: white;
   box-shadow: 2px 2px 4px gray;
 }
 .second-box {
   width: 700px;
-  // height: 275px;
+  height: 275px;
   margin:30px auto;
   background-color: white;
   box-shadow: 2px 2px 4px gray;
 }
-.message-info {
-  padding:0 15px;
-} 
-.message-date{
-  padding-top: 15px;
+p {
+  padding: 15px;
 }
 .link-btn {
   display: inline-block;
@@ -80,8 +55,8 @@ header {
   border: none;
   border-bottom: 2px solid #264079;
   outline: none;
-  color: #ffffff;
-  background-color: #5083ce;
+  color: #FFFFFF;
+  background-color: #282D65;
   border-radius: 5px;
 }
 .link-btn:hover {
@@ -96,9 +71,9 @@ header {
   font-size: 16px;
   border: none;
   outline: none;
-  color: #ffffff;
-  background-color: #7b7c7e;
-  border-bottom: 2px solid #3a3a3a;
+  color: #FFFFFF;
+  background-color: #7B7C7E;
+  border-bottom: 2px solid #3A3A3A;
   border-radius: 5px;
 }
 .hide-btn:hover {

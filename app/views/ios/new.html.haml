@@ -1,10 +1,14 @@
-= form_for @io do |f|
-  %header
-    =f.text_field :student_id,id: "ios_student_id"     
-    %span#ios_student_name
-      名前
-  .container
-    = f.submit "  入室する", id: "ios_enter",class: "fas ios_button"
-    = f.submit "退室する  ", id: "ios_exit",class: "fas ios_button"    
-    %button#ios_cancel.fas.ios_button
-      キャンセル
+.ios_wrapper
+  = form_for @io do |f|
+    .container
+      .ios-header
+        =f.text_field :student_id,id: "ios_student_id"
+        .header-items
+          %span#ios_student_name
+            山田　のぞみ
+          %span#ios_time
+            1/3(日)15:43
+      = f.submit "  入室する", id: "ios_enter",class: "fas ios_button"
+      = f.submit "退室する  ", id: "ios_exit",class: "fas ios_button"    
+      %button#ios_cancel.fas.ios_button
+        キャンセル

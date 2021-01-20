@@ -1,27 +1,79 @@
-.container
+.container-fluid.p-0{:style => "width: 100%; height: 100vh;"}
   / Outer Row
-  .row.justify-content-center
-    .col-xl-10.col-lg-12.col-md-9
-      .card.o-hidden.border-0.shadow-lg.my-5
-        .card-body.p-0
-          / Nested Row within Card Body
-          .row
-            .col-lg-6.d-done.d-lg-block.bg-login-image
-            .col-lg-6
-              .p-5
-                .text-center
-                  %h1.h4.text-gray-900.mb-4 生徒新規登録
-                =form_for(@student) do |f|
-                  .form-group
-                    =f.text_field :student_name ,class: "form-control form-control-user",placeholder: "生徒氏名"
-                  .form-group
-                    =f.text_field :student_class ,class: "form-control form-control-user",placeholder: "クラス"
-                  .form-group
-                    =f.text_field :parent_name ,class: "form-control form-control-user",placeholder: "保護者氏名"
-                  .form-group
-                    .custom-control.custom-checkbox.small
-                      =f.check_box :student_enabled,class: "custom-control-input"
-                      =f.label :student_enabled, "在籍中"
-                  =f.submit "登録", class:"btn btn-primary btn-user btn-block"
-                = link_to "キャンセル", root_path
+  .row
+    .col-md-2{:style => "background-color: #282D65;"}
+      %nav.nav.flex-column.py-4
+        %a.nav-link.active.pb-5{:href => "#", :style => "font-size: 20px; color: #F8FAF9;"} サイト内メニュー
+        %a.navigation.nav-link.py-3{:href => "#", :style => "color: #F8FAF9;"}
+          %i.fas.fa-caret-right.fa-fw
+            生徒一覧
+        %a.nav-link.py-3{:href => "#", :style => "color: #F8FAF9;"}
+          %i.fas.fa-caret-right.fa-fw
+            LINEメッセージ
+        %a.nav-link.disabled.py-3{:href => "#", :style => "color: #F8FAF9;"}
+          %i.fas.fa-caret-right.fa-fw
+            生徒新規登録
+    .col-md-10.p-0
+      %header{:style => "height: 70px;  border-bottom: 2px solid #7DB0C9;"}
+        %h1.text-center.py-3{:style => "font-size: 36px; color:#282D65; background-color: #F8FAF9;"} 生徒新規登録
+      .main.pt-5{:style => "background-color: #757F95; height: 100vh;"}
+        .table-responsive.m-auto{:style => "width: 72%; display: flex; box-shadow: 2px 2px 4px gray;"}
+          =image_tag 'register.jpg',{style: "width: 50%;"}
+          %div{:style => "width: 50%; background-color: #F8FAF9;"}
+            .p-5
+              .text-center
+                %h1.h4.mb-4{:style => "color: #282D65;"} 生徒新規登録
+              %form.user
+                .form-group
+                  %input.form-control.form-control-user{:id => "", :placeholder => "生徒氏名", :style => "border-radius: 5px;", :type => "text"}/
+                .form-group
+                  %input.form-control.form-control-user{:id => "", :placeholder => "クラス", :style => "border-radius: 5px;", :type => "text"}/
+                .form-group
+                  %input.form-control.form-control-user{:id => "", :placeholder => "保護者名", :style => "border-radius: 5px;", :type => "text"}/
+                .form-group
+                  .custom-control.custom-checkbox.small
+                    %input#customCheck.custom-control-input{:type => "checkbox"}/
+                    %label.custom-control-label{:for => "customCheck"}
+                      在籍中
+              %form.register-form{:action => "", :method => ""}                  
+                %input.btn.register-btn.mb-3{:style => "background-color: #282D65; color:#F8FAF9;width: 100%; height: 56px; border-radius: 5px;", :type => "button", :value => "登録する"}
+                  %a.btn.btn-google.btn-user.btn-block{:href => "#"}
+                    キャンセル
+/ Bootstrap core JavaScript
+%script{:src => "vendor/jquery/jquery.min.js"}
+%script{:src => "vendor/bootstrap/js/bootstrap.bundle.min.js"}
+/ Core plugin JavaScript
+%script{:src => "vendor/jquery-easing/jquery.easing.min.js"}
+/ Custom scripts for all pages
+%script{:src => "js/sb-admin-2.min.js"}
+
+
+
+
+-# .container
+-#   / Outer Row
+-#   .row.justify-content-center
+-#     .col-xl-10.col-lg-12.col-md-9
+-#       .card.o-hidden.border-0.shadow-lg.my-5
+-#         .card-body.p-0
+-#           / Nested Row within Card Body
+-#           .row
+-#             .col-lg-6.d-done.d-lg-block.bg-login-image
+-#             .col-lg-6
+-#               .p-5
+-#                 .text-center
+-#                   %h1.h4.text-gray-900.mb-4 生徒新規登録
+-#                 =form_for(@student) do |f|
+-#                   .form-group
+-#                     =f.text_field :student_name ,class: "form-control form-control-user",placeholder: "生徒氏名"
+-#                   .form-group
+-#                     =f.text_field :student_class ,class: "form-control form-control-user",placeholder: "クラス"
+-#                   .form-group
+-#                     =f.text_field :parent_name ,class: "form-control form-control-user",placeholder: "保護者氏名"
+-#                   .form-group
+-#                     .custom-control.custom-checkbox.small
+-#                       =f.check_box :student_enabled,class: "custom-control-input"
+-#                       =f.label :student_enabled, "在籍中"
+-#                   =f.submit "登録", class:"btn btn-primary btn-user btn-block"
+-#                 = link_to "キャンセル", root_path
                   
