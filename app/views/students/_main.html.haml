@@ -1,0 +1,26 @@
+- @students.each do |student|
+  %tr
+    %td{:style => "color: #282D65; vertical-align: middle;"}
+      = student.id
+    %td{:style => "color: #282D65; vertical-align: middle;"}
+      = student.student_name
+    %td{:style => "color: #282D65; vertical-align: middle;"}
+      = student.student_class
+    %td{:style => "color: #282D65; vertical-align: middle;"}
+      = student.student_enabled ? '○' : '-'
+    %td
+      = link_to root_path do
+        %i.far.fa-file.fa-fw{:style => "color: #282D65;"}
+      =link_to root_path do
+        %i.fas.fa-edit.fa-fw{:style => "color: #282D65;"}
+    %a.btn{"data-target" => "#testModal", "data-toggle" => "modal", :href => "#"}
+      %i.fas.fa-trash.fa-fw{:style => "color: #282D65;"}
+    -# #testModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "basicModal", :role => "dialog", :tabindex => "-1"}
+    -#   .modal-dialog
+    -#     .modal-content
+    -#       .modal-header
+    -#         %h4{:style => "color: #282D65;"} 削除確認画面
+    -#       .modal-body
+    -#         %label{:style => "color: #282D65;"} 本当に削除しても宜しいですか？
+    -#       .modal-footer
+    -#         %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} 閉じる
