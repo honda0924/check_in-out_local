@@ -1,0 +1,12 @@
+.col-md-2{style: "background-color: #282D65;"}
+  %nav.nav.flex-column.py-4
+    .nav-link.active.pb-5{style: "font-size: 20px; color: #F8FAF9;"} サイト内メニュー
+    =link_to root_path, class: 'navigation nav-link py-3 white' do
+      %i.fas.fa-caret-right.fa-fw
+      生徒一覧
+    =link_to messages_path, class: 'navigation nav-link py-3 white' do
+      %i.fas.fa-caret-right.fa-fw
+      LINEメッセージ
+    =link_to new_student_path, class: 'navigation nav-link py-3 white' do
+      %i.fas.fa-caret-right.fa-fw
+      登録画面
