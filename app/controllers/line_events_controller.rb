@@ -16,13 +16,13 @@ class LineEventsController < ApplicationController
           when Line::Bot::Event::Message # Messageの場合
             case event['type']
             when 'message'
-              # Message.create(
-              #   user_uid: userId, 
-              #   replyToken: event['replyToken'],  
-              #   message_id: event['message']['id'], 
-              #   message_type: event['message']['type'], 
-              #   message_text: event['message']['text']
-              #  )
+              Message.create(
+                user_uid: userId, 
+                replyToken: event['replyToken'],  
+                message_id: event['message']['id'], 
+                message_type: event['message']['type'], 
+                message_text: event['message']['text']
+               )
               puts event['message']['text']
             end
           end
