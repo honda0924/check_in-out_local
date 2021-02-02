@@ -10,11 +10,15 @@
       .message-box
         %p.message-info.message-date
           =message.created_at
-        %p.message-info
-          = 'LINEID:' + message.line_uid
+        %p.message-info.line_id
+          LINEID:
+          %span
+            = message.line_uid
         %p.message-info
           =message.student_id
         %p.message-info
           = message.message_text
-        = link_to '生徒と紐付け',new_lineuser_path,class: "btn link-btn"
+        .btn.link-btn.student_link
+          生徒と紐付け
+        -# = link_to '生徒と紐付け',new_lineuser_path,class: "btn link-btn"
         = link_to '既読にする',root_path,class: "btn hide-btn"
