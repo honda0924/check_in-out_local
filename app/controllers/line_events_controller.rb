@@ -17,9 +17,9 @@ class LineEventsController < ApplicationController
             case event['type']
             when 'message'
               Message.create(
-                user_uid: userId, 
-                replyToken: event['replyToken'],  
-                message_id: event['message']['id'], 
+                line_uid: userId, 
+                # replyToken: event['replyToken'],  
+                # message_id: event['message']['id'], 
                 message_type: event['message']['type'], 
                 message_text: event['message']['text']
                )
