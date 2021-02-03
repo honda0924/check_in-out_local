@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   post :line_events, to: 'line_events#receive'
   resources :ios
   resources :messages
-  resources :lineusers
+  resources :lineusers do
+    member do
+      get :link
+    end
+  end
 end

@@ -2,18 +2,23 @@
 %header
   %h1.header-title LINE 受信メッセージ
   %button.header-btn 既読も含めて表示
-= render '/shared/sidebar'
-%section.main
+
+%section.main.d-flex
+  = render '/shared/sidebar'
   .container
     - @messages.each do |message|
       .message-box
         %p.message-info.message-date
           =message.created_at
+        %p.message-info.line_id
+          LINEID:
+          %span
+            = message.line_uid
         %p.message-info
-          = 'LINEID:' + message.line_uid
-        %p.message-info
-          山田　のぞみ
+          =message.student_id
         %p.message-info
           = message.message_text
-        = link_to '生徒と紐付け',new_lineuser_path,class: "link-btn"
-        = link_to '既読にする',edit_message_path,class: "hide-btn"
+        .btn.link-btn.student_link
+          生徒と紐付け
+        -# = link_to '生徒と紐付け',new_lineuser_path,class: "btn link-btn"
+        = link_to '既読にする',root_path,class: "btn hide-btn"
