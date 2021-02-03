@@ -25,7 +25,6 @@ header {
 
 .box {
   width: 700px;
-  height: 350px;
   padding: 40px 20px 20px 20px;
   margin:140px auto;
   background-color: #F8FAF9;
@@ -39,13 +38,13 @@ form {
   color:#282D65;
 }
 .lineid {
-  margin:0 30px 30px 0;
+  margin:0;
 }
 .parentsname {
-  margin:20px 5px 20px 0;
+  margin:20px 5px 0 0;
 }
 .studentsname {
-  margin: 20px 29px 20px 0;
+  margin: 20px 29px 0 0;
 }
 .register-form {
   width: 180px;
@@ -87,4 +86,15 @@ form {
   color: #F8FAF9;
   cursor: pointer;
   text-decoration: none;
+}
+#link_line_id{
+  width: 500px;
+}
+#link_parent{
+  width:300px;
+}
+#link_student{
+  width:200px;
+  margin-bottom: 20px;
+  height:30px;
 }

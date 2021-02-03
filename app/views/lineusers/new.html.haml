@@ -6,12 +6,13 @@
       = form_for @lineuser do |f|
         %p.lineid
           LINE ID
-          = f.text_field :line_uid, id: 'link_line_id'
+        = f.text_field :line_uid, id: 'link_line_id'
         %p.parentsname
           保護者氏名
-          = f.text_field :line_name, id: 'link_parent'
+        = f.text_field :line_name, id: 'link_parent'
         %p.studentsname
           生徒氏名
-          =f.collection_select :student_id, Student.all, :id, :student_name, {include_blank: true}, {id: 'link_student'}
-        = f.submit '登録する', class: 'register-btn'
-      = link_to 'キャンセル', root_path, {class: 'cansel-btn'}
+        =f.collection_select :student_id, Student.all, :id, :student_name, {include_blank: true}, {id: 'link_student'}
+        .d-flex
+          = f.submit '登録する', class: 'register-btn'
+          = link_to 'キャンセル', root_path, {class: 'btn cansel-btn'}
