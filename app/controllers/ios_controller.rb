@@ -3,10 +3,15 @@ class IosController < ApplicationController
     @io=Io.new
   end
   def create
-    if params[:check_in]
-      
-    elsif params[:check_out]
-      
+    @io = Io.new
+    if @io.save
+      respond_to do |format|
+        format.html
+        format.json
+      end
+    
     end
   end
+  private
+  def ios_params
 end
