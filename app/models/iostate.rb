@@ -1,0 +1,2 @@
+class Iostate < ApplicationRecord
+end
