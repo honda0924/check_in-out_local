@@ -18,6 +18,41 @@ $(function(){
     showClock();
   }, 1000);
 
+  $('#ios_student_id').on('keyup',function(){
+    let input = $(this).val();
+    console.log(input);
+    $.ajax({
+      type: 'GET',
+      url: '/students',
+      data: { ios_student_id: input},
+      dataType: 'json'
+    }).done(function(students){
+      if (students.length > 0) {
+        document.querySelector('#ios_student_name').textContent = students[0].student_name;
+        document.querySelector('#ios_student_name').value = students[0].student_name;
+        $.ajax({
+          type:'GET',
+          url: '/iostates',
+          data: {ios_student_id: input},
+          dataType: 'json'
+        }).done(function(iostates){
+          const iostate = iostates[0];
+          if (iostate.iostat === 0) {
+            document.querySelector('#form_checkin').removeClass('d-none');
+          } else if (iostate.iostat === 1){
+            document.querySelector('#form_checkout').removeClass('d-none');
+          }
+        }).fail(function () {
+          
+        });
+      } else {
+        document.querySelector('#ios_student_name').textContent === '' ? 'idを入力して下さい' : 'idが一致しません';
+      }
+    }).fail(function(){
+      document.querySelector('#ios_student_name').textContent = '検索に失敗しました';
+    });
+  });
+
 
   
   
@@ -27,22 +62,6 @@ $(function(){
 
 
   $('#ios_enter').on('click',function(e){
-    // // e.preventDefault();
-    // const url = 'https://api.line.me/v2/bot/message/push';
-    // const sendBody = {
-    //   to: 'U0d1607fd7ec247b84f52da09b3ab30e1',
-    //   messages:'入室しました'
-    //   // messages:`${student_name}さんが${stamp_time}に入室されました。`,
-    // }
-    // fetch(url,{
-    //   method: 'POST',
-    //   mode: 'no-cors',
-    //   headers:{
-    //     'Content-Type' : 'application/json',
-    //     'Authorization' : 'Bearer d1c4Y9CggTzklxQ+s44F2osUrTX/1KHvr5W9NwDyJuy4wmbYJ5Da6OsMxZA4PMhCuiYIy7OAjMpG/TSrsxSIj9KjCm0tN8dBN4malFiwlls4RwfLz41BbfHRTn9OwoKefzxwuHwvHUeEKxaqfWQMXgdB04t89/1O/w1cDnyilFU=;wq',        
-    //   },
-    //   body: JSON.stringify(sendBody),
-    // });
   });
   $('#ios_exit').on('click',function(){
     const line_uid = $(this).parent().find('span').html();
