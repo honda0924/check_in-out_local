@@ -5,7 +5,7 @@
         %input#ios_student_id{name: 'ios_student_id',type: 'text', value: ''}
         %span#ios_student_name.ml-4
       %span#ios_time
-    = form_with model: @io, html: {id: 'form_checkin'} do |f|
+    = form_with model: @io, html: {id: 'form_checkin',class: 'd-none'} do |f|
       .ios-header
         =f.hidden_field :student_id,id: "ios_student_id-checkin"
       = f.submit "  入室する", id: "ios_enter",class: "fas ios_button"

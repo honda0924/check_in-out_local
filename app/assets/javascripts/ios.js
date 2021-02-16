@@ -36,11 +36,14 @@ $(function(){
           data: {ios_student_id: input},
           dataType: 'json'
         }).done(function(iostates){
+          console.log(iostates);
           const iostate = iostates[0];
           if (iostate.iostat === 0) {
-            document.querySelector('#form_checkin').removeClass('d-none');
+            if (document.querySelector('#form_checkout').classList)document.querySelector('#form_checkout').classList.add('d-none');
+            document.querySelector('#form_checkin').classList.remove('d-none');
           } else if (iostate.iostat === 1){
-            document.querySelector('#form_checkout').removeClass('d-none');
+            if (document.querySelector('#form_checkin').classList)document.querySelector('#form_checkin').classList.add('d-none');
+            document.querySelector('#form_checkout').classList.remove('d-none');
           }
         }).fail(function () {
           

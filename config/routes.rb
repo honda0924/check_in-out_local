@@ -15,4 +15,5 @@ Rails.application.routes.draw do
       get :link
     end
   end
+  resources :iostates
 end
