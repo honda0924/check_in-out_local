@@ -13,5 +13,5 @@
       .ios-header
         =f.hidden_field :student_id,id: "ios_student_id-checkout"
       = f.submit "退室する  ", id: "ios_exit",class: "fas ios_button"
-    %button#ios_cancel.fas.ios_button
-      キャンセル
+    .fas.ios_button#ios_cancel
+      = link_to 'キャンセル', new_io_path
