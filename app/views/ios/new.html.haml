@@ -5,13 +5,12 @@
         %input#ios_student_id{name: 'ios_student_id',type: 'text', value: ''}
         %span#ios_student_name.ml-4
       %span#ios_time
-    = form_with model: @io, html: {id: 'form_checkin',class: 'd-none'} do |f|
+    = form_with model: @io, url: checkin_ios_path, html: {id: 'form_checkin',class: 'd-none'} do |f|
       .ios-header
         =f.hidden_field :student_id,id: "ios_student_id-checkin"
       = f.submit "  入室する", id: "ios_enter",class: "fas ios_button"
-    = form_with model: @io, html: {id: 'form_checkout', class: 'd-none'} do |f|
+    = form_with model: @io,url: checkout_ios_path, html: {id: 'form_checkout', class: 'd-none'} do |f|
       .ios-header
         =f.hidden_field :student_id,id: "ios_student_id-checkout"
       = f.submit "退室する  ", id: "ios_exit",class: "fas ios_button"
-    .fas.ios_button#ios_cancel
-      = link_to 'キャンセル', new_io_path
+    = link_to 'キャンセル', new_io_path, id:'ios_cancel', class: 'fas ios_button btn'

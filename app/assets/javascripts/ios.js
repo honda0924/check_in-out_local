@@ -10,7 +10,7 @@ $(function(){
     let now_hour=('0' + now_time.getHours()).slice(-2);
     let now_minute=('0'+ now_time.getMinutes()).slice(-2);
     let now_second=('0' + now_time.getSeconds()).slice(-2);
-
+    
     document.querySelector('#ios_time').textContent=`${now_month}/${now_date}(${week_chars[now_day_of_the_week]}) ${now_hour}:${now_minute}:${now_second}`;
   }
 
@@ -20,6 +20,8 @@ $(function(){
 
   $('#ios_student_id').on('keyup',function(){
     let input = $(this).val();
+    $('#ios_student_id-checkin').val(input);
+    $('#ios_student_id-checkout').val(input);
     console.log(input);
     $.ajax({
       type: 'GET',
@@ -67,9 +69,9 @@ $(function(){
   $('#ios_enter').on('click',function(e){
   });
   $('#ios_exit').on('click',function(){
-    const line_uid = $(this).parent().find('span').html();
-    sessionStorage.setItem('LINEID',line_uid);
-    window.location.href = '/lineusers/new';
+    // const line_uid = $(this).parent().find('span').html();
+    // sessionStorage.setItem('LINEID',line_uid);
+    // window.location.href = '/lineusers/new';
   });
   $('#ios_cancel').on('click',function(){
     // const line_uid = $(this).parent().find('span').html();

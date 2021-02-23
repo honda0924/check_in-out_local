@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :students
   post :line_events, to: 'line_events#receive'
   resources :ios do
-    member do
+    collection do
       post :checkin
       post :checkout
     end
