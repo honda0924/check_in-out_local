@@ -6,24 +6,13 @@ class IosController < ApplicationController
       format.html
       format.json
     end
-    # @student = Student.where(:id => )
-    # gon.line_token = Rails.application.credentials.line[:channel_token]
-  end
-  def create
-    # @io = Io.new
-    # if @io.save
-    #   respond_to do |format|
-    #     format.html
-    #     format.json
-    #   end
-    
-    # end
 
   end
+
   def checkin
     @student = Student.find(params[:io][:student_id])
     @lineuser = Lineuser.where(student_id: params[:io][:student_id]).first
-
+    @iostate = Iostate.where(student_id: params[:io][:student_id]).first
     
     
     msgText = "#{@student.student_name}さんが#{set_time}に入室しました。"
@@ -31,29 +20,52 @@ class IosController < ApplicationController
       type: 'text',
       text: msgText
     }
-    client = Line::Bot::Client.new { |config|
-    config.channel_secret = Rails.application.credentials.line[:channel_secret]
-    config.channel_token = Rails.application.credentials.line[:channel_token]
-    }
-    response = client.push_message(@lineuser.line_uid,message)
-    puts response
+
+    Io.transaction do
+      
+      @io = Io.create!(ios_checkin_params)
+      
+      @iostate.update!(state_checkin_params)
+
+      client = Line::Bot::Client.new { |config|
+      config.channel_secret = Rails.application.credentials.line[:channel_secret]
+      config.channel_token = Rails.application.credentials.line[:channel_token]
+      }
+      response = client.push_message(@lineuser.line_uid,message)
+      puts response
+
+      redirect_to new_io_path
+
+    end
+
   end
+
   def checkout
     
     @student = Student.find(params[:io][:student_id])
     @lineuser = Lineuser.where(student_id: params[:io][:student_id]).first
+    @iostate = Iostate.where(student_id: params[:io][:student_id]).first
+
     
     msgTxt = "#{@student.student_name}さんが#{set_time}に退室しました。"
     message = {
       type: 'text',
       text: msgTxt
     }
-    client = Line::Bot::Client.new { |config|
-    config.channel_secret = Rails.application.credentials.line[:channel_secret]
-    config.channel_token = Rails.application.credentials.line[:channel_token]
-    }
-    response = client.push_message(@lineuser.line_uid,message)
-    puts response
+    Io.transaction do
+      @io = Io.create!(ios_checkout_params)
+      @iostate.update!(state_checkout_params)
+      client = Line::Bot::Client.new { |config|
+      config.channel_secret = Rails.application.credentials.line[:channel_secret]
+      config.channel_token = Rails.application.credentials.line[:channel_token]
+      }
+      response = client.push_message(@lineuser.line_uid,message)
+      puts response
+
+      redirect_to new_io_path
+
+    end
+
   end
 
   private
@@ -68,5 +80,11 @@ class IosController < ApplicationController
   end
   def ios_checkout_params
     params.permit.merge(student_id: params[:io][:student_id] ,out_time: Time.now)
+  end
+  def state_checkin_params
+    params.permit.merge(student_id: params[:io][:student_id], iostat: 1)
+  end
+  def state_checkout_params
+    params.permit.merge(student_id: params[:io][:student_id], iostat: 0)
   end
 end
