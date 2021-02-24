@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
     def index
-       @students=Student.all 
+       @students=Student.where(id: params[:ios_student_id].to_i)
     end
     def new
         @student = Student.new

@@ -3,11 +3,17 @@ Rails.application.routes.draw do
   root to: "students#index"
   resources :students
   post :line_events, to: 'line_events#receive'
-  resources :ios
+  resources :ios do
+    collection do
+      post :checkin
+      post :checkout
+    end
+  end
   resources :messages
   resources :lineusers do
     member do
       get :link
     end
   end
+  resources :iostates
 end
