@@ -24,8 +24,12 @@ class IosController < ApplicationController
     Io.transaction do
       
       @io = Io.create!(ios_checkin_params)
+      if @iostate
+        @iostate.update!(state_checkin_params)
+      else
+        Iostate.create!(state_checkin_params)
+      end
       
-      @iostate.update!(state_checkin_params)
 
       client = Line::Bot::Client.new { |config|
       config.channel_secret = Rails.application.credentials.line[:channel_secret]
@@ -54,7 +58,11 @@ class IosController < ApplicationController
     }
     Io.transaction do
       @io = Io.create!(ios_checkout_params)
-      @iostate.update!(state_checkout_params)
+      if @iostate
+        @iostate.update!(state_checkout_params)
+      else
+        @iostate.create!(state_checkout_params)
+      end
       client = Line::Bot::Client.new { |config|
       config.channel_secret = Rails.application.credentials.line[:channel_secret]
       config.channel_token = Rails.application.credentials.line[:channel_token]
@@ -76,7 +84,6 @@ class IosController < ApplicationController
 
   def ios_checkin_params
     params.permit.merge(student_id: params[:io][:student_id] ,in_time: Time.now)
-    
   end
   def ios_checkout_params
     params.permit.merge(student_id: params[:io][:student_id] ,out_time: Time.now)
