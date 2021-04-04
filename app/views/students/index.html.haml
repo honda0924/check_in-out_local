@@ -16,6 +16,23 @@
                   %th{:style => "width: 8%; color: #282D65;"} 在籍
                   %th{:style => "width: 16%; color: #282D65;"} アクション
               %tbody
+                -@students.each do |student|
+                  %tr
+                    %td{:style => "color: #282D65; vertical-align: middle;"}
+                      = student.id
+                    %td{:style => "color: #282D65; vertical-align: middle;"}
+                      = student.student_name
+                    %td{:style => "color: #282D65; vertical-align: middle;"}
+                      = student.student_class
+                    %td{:style => "color: #282D65; vertical-align: middle;"}
+                      = student.student_enabled ? '○' : '-'
+                    %td
+                      = link_to root_path do
+                        %i.far.fa-file.fa-fw{:style => "color: #282D65;"}
+                      =link_to root_path do
+                        %i.fas.fa-edit.fa-fw{:style => "color: #282D65;"}
+                      %a.btn{"data-target" => "#testModal", "data-toggle" => "modal", :href => "#"}
+                        %i.fas.fa-trash.fa-fw{:style => "color: #282D65;"}
                 -# = render 'main'
 
   %script{:crossorigin => "anonymous", :integrity => "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", :src => "https://code.jquery.com/jquery-3.3.1.slim.min.js"}
