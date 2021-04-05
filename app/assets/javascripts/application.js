@@ -14,4 +14,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require activestorage
+//= require data-confirm-modal
 //= require_tree .
