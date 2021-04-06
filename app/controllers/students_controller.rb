@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
     def index
     #    @students=Student.where(id: params[:ios_student_id].to_i)
-    @students=Student.all
+        @students=Student.all
     end
     def new
         @student = Student.new

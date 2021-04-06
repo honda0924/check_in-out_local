@@ -14,3 +14,4 @@
         =f.hidden_field :student_id,id: "ios_student_id-checkout"
       = f.submit "退室する  ", id: "ios_exit",class: "fas ios_button"
     = link_to 'キャンセル', new_io_path, id:'ios_cancel', class: 'fas ios_button btn'
+= javascript_include_tag 'ios.js'

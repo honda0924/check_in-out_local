@@ -22,7 +22,7 @@ $(function(){
     let input = $(this).val();
     $('#ios_student_id-checkin').val(input);
     $('#ios_student_id-checkout').val(input);
-    console.log(input);
+    console.log(document.querySelector('#ios_student_id-checkin').value);
     $.ajax({
       type: 'GET',
       url: '/students',
@@ -30,6 +30,7 @@ $(function(){
       dataType: 'json'
     }).done(function(students){
       if (students.length > 0) {
+        console.log(students);
         document.querySelector('#ios_student_name').textContent = students[0].student_name;
         document.querySelector('#ios_student_name').value = students[0].student_name;
         $.ajax({
