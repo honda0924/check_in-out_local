@@ -31,8 +31,8 @@ $(function(){
     }).done(function(students){
       if (students.length > 0) {
         console.log(students);
-        document.querySelector('#ios_student_name').textContent = students[0].student_name;
-        document.querySelector('#ios_student_name').value = students[0].student_name;
+        document.querySelector('#ios_student_name').textContent = students[input].student_name;
+        document.querySelector('#ios_student_name').value = students[input].student_name;
         $.ajax({
           type:'GET',
           url: '/iostates',
