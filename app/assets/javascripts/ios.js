@@ -30,9 +30,10 @@ $(function(){
       dataType: 'json'
     }).done(function(students){
       if (students.length > 0) {
-        console.log(students);
-        document.querySelector('#ios_student_name').textContent = students[0].student_name;
-        document.querySelector('#ios_student_name').value = students[0].student_name;
+        console.log(students[0].id);
+        console.log(students.filter(student => student.id === Number(input)));
+        document.querySelector('#ios_student_name').textContent = students.filter(student => student.id === Number(input))[0].student_name;
+        // document.querySelector('#ios_student_name').value = students.filter(student => student.id === input).student_name;
         $.ajax({
           type:'GET',
           url: '/iostates',
